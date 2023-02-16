@@ -11,7 +11,6 @@ function App() {
     {
       path: '/',
       element: <Main></Main>,
-      errorElement: <NotFound></NotFound>,
       children: [
         {
           path: '/',
@@ -28,7 +27,12 @@ function App() {
         {
           path: '/about',
           element: <About></About>
+        },
+        {
+          path: '*',
+          element: <NotFound></NotFound>
         }
+
       ]
     }
   ]);
