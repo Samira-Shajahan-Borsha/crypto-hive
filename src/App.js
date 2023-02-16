@@ -1,10 +1,12 @@
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
 import About from "./components/About/About";
+import BDaddress from "./components/BDaddress/BDaddress";
 import CoinDetails from "./components/CoinDetails/CoinDetails";
 import Coins from "./components/Coins/Coins";
 import Contact from "./components/Contact/Contact";
 import HomePage from "./components/HomePage/HomePage";
 import NotFound from "./components/NotFound/NotFound";
+import USaddress from "./components/USaddress/USaddress";
 import Main from "./layouts/Main";
 
 function App() {
@@ -29,7 +31,17 @@ function App() {
         },
         {
           path: '/contact',
-          element: <Contact></Contact>
+          element: <Contact></Contact>,
+          children: [
+            {
+              path: '/contact/bd-address',
+              element: <BDaddress></BDaddress>
+            },
+            {
+              path: '/contact/us-address',
+              element: <USaddress></USaddress>
+            }
+          ]
         },
         {
           path: '/about',
@@ -39,7 +51,6 @@ function App() {
           path: '*',
           element: <NotFound></NotFound>
         }
-
       ]
     }
   ]);
