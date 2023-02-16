@@ -1,5 +1,6 @@
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
 import About from "./components/About/About";
+import CoinDetails from "./components/CoinDetails/CoinDetails";
 import Coins from "./components/Coins/Coins";
 import Contact from "./components/Contact/Contact";
 import HomePage from "./components/HomePage/HomePage";
@@ -20,6 +21,11 @@ function App() {
           path: '/coins',
           loader: () => fetch('https://api.coingecko.com/api/v3/coins/markets?vs_currency=usd&order=market_cap_desc&per_page=50&page=1&sparkline=false'),
           element: <Coins></Coins>
+        },
+        {
+          path: '/coin-details/:id',
+          loader: ({ params }) => fetch(`https://api.coingecko.com/api/v3/coins/${params.id}`),
+          element: <CoinDetails></CoinDetails>
         },
         {
           path: '/contact',

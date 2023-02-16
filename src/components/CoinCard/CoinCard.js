@@ -2,9 +2,9 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 
 const CoinCard = ({ coin }) => {
-    const { name, image, symbol } = coin;
+    const { id, name, image, symbol } = coin;
     return (
-        <Link>
+        <Link to={`/coin-details/${id}`}>
             <div className='flex justify-between bg-white w-[-250px] p-4 shadow-lg rounded-2xl'>
                 <div className='flex-shrink-0'>
                     <img className='h-16 w-16 object-cover mx-auto rounded-full' src={image} alt="" />
