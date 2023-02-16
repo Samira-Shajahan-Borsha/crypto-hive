@@ -11,7 +11,7 @@ const CoinCard = ({ coin }) => {
                 </div>
                 <div>
                     <p>{name}</p>
-                    <p><small className='text-gray-500 text-end'>{symbol}</small></p>
+                    <p className='text-end'><small className='text-gray-500'>{symbol}</small></p>
                 </div>
             </div>
         </Link>
